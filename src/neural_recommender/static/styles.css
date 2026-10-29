@@ -1,0 +1,159 @@
+:root {
+  color-scheme:light;
+  --ink:#172d3d;
+  --muted:#657582;
+  --line:#dce3e8;
+  --accent:#3d4fc5;
+}
+* {
+  box-sizing:border-box;
+}
+body {
+  margin:0;
+  background:#f5f6fa;
+  color:var(--ink);
+  font:16px/1.6 system-ui,sans-serif;
+}
+header {
+  padding:22px 6%;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+a {
+  color:var(--accent);
+}
+main {
+  max-width:1160px;
+  margin:48px auto;
+  padding:0 28px;
+}
+.eyebrow {
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:12px;
+  color:var(--accent);
+}
+h1 {
+  font-size:clamp(32px,5vw,54px);
+  line-height:1.1;
+  letter-spacing:-.05em;
+  margin:16px 0;
+}
+p {
+  color:var(--muted);
+  max-width:720px;
+}
+.grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin:32px 0;
+}
+.card {
+  background:white;
+  border:1px solid var(--line);
+  padding:26px;
+  border-radius:16px;
+}
+input,select {
+  width:100%;
+  padding:13px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  font:inherit;
+  background:white;
+}
+label {
+  font-size:13px;
+  font-weight:600;
+  display:block;
+  margin-bottom:8px;
+}
+.reranking-label {
+  margin-top:20px;
+}
+button {
+  border:0;
+  border-radius:8px;
+  background:var(--accent);
+  color:white;
+  padding:11px 15px;
+  font:inherit;
+  cursor:pointer;
+}
+button:disabled {
+  opacity:.5;
+  cursor:default;
+}
+.result {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:12px 0;
+  border-bottom:1px solid var(--line);
+}
+.result button {
+  padding:5px 12px;
+}
+.small {
+  font-size:13px;
+  color:var(--muted);
+}
+.chip {
+  display:inline-flex;
+  gap:8px;
+  background:#eef0ff;
+  border-radius:8px;
+  padding:6px 10px;
+  margin:4px;
+  font-size:13px;
+}
+.chip button {
+  padding:0 3px;
+  background:transparent;
+  color:var(--accent);
+}
+.error {
+  color:#a32c2c;
+}
+@media(max-width:760px) {
+  .grid {
+    grid-template-columns:1fr;
+  }
+  header {
+    font-size:13px;
+  }
+  main {
+    margin-top:28px;
+  }
+}
+
+/* Shared interaction affordances keep keyboard use visible and avoid overflow. */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+.grid > *, .card {
+  min-width: 0;
+}
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+/* Keep identity readable above the status/link row on narrow screens. */
+@media (max-width: 480px) {
+  header {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+  header > strong {
+    flex-basis: 100%;
+  }
+  header > a {
+    margin-left: auto;
+    white-space: nowrap;
+  }
+}

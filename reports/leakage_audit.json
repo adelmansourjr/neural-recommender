@@ -1,0 +1,117 @@
+{
+  "created_at": "2026-10-23T11:05:46.330132+00:00",
+  "status": "passed_recorded_user_isolation_checks",
+  "scope": "Read-only reconstruction; no fitting, tuning, or new evaluation cohort.",
+  "data_sha256": "a6898adb50b9ca05aa231689da44c217cb524e7ebd39d264c56e2832f2c54e20",
+  "input_sha256": {
+    "pilot": "a8d87e42b55c1b4d4d670d3eee9db31bbe2dac4034370d8da93bdce9cd614528",
+    "upgrade_protocol": "02f785c7d6cb60dbef0346cabee647946b6262b9cfaf18772bb8437bc92e7176",
+    "refinement_protocol": "52c8ee22bbbfe595b9f374e99700020fcac57adcfd80eb8c9cb5c20d4dbb6f38",
+    "upgrade_report": "d53749cd582f8952ff7a0189e576a40354b4cb84eb42b42bbcac4347fac1ecda",
+    "refinement_report": "c11dc070d80eff3b3f65420e49a63fd53cb129140c189539814441827b114095",
+    "selection": "33c0e9b2bfcc89da04749c0ad6a25d21805577972d41858297295ae78159e500"
+  },
+  "implementation_sha256": {
+    "leakage_audit.py": "e11eea2967df8da8ac542528a9320dc5d95489f3b6e80f02a13f1ffa91eaf527",
+    "isolation.py": "e4d76c185acf776ef7bb57565395ac43cf4a8f900a079efa9aa28f12ba2a51fa",
+    "data.py": "28605f027b953ecbaba4a5d03682ad5bf4099d99a2f775482f0271c70b96fd15",
+    "optimization.py": "dd87ad5d84124e7fee3b33004457f0e7ac0e8717074b8de0b97834eeb8ee6fdc",
+    "refinement.py": "2e4928046360a0916be94e9a16e532e25540d77c8a664cbd50d3ade34181bb36",
+    "baselines.py": "f631de9f8deefd890cb300775bdeef0f4a897c02b9b94f2080075dc058541290"
+  },
+  "bundle": "v3-1b898ab1a5394f47",
+  "artifact_hashes": {
+    "rankers.npz": "7f3c82fcc98e19c4e8eb0476fc4dd0546cc003d7d086de2d6253e4ae6cd95a4f",
+    "neural_0.pt": "256f0c60b31f5db523ed04eda6065de67df71f6568b1107538759323bb9c0f2d",
+    "neural_1.pt": "978cd6e7c6b57ac19d9aa8d82cb63499aa18ecf68b0fed339b3d7e3974c27e7a",
+    "neural_2.pt": "7c60154ffb47db6cfd1b72ebf1014003977b9264a17d8ce674a0ffdbf855a9be",
+    "als.npz": "a6d802c19b5405abacf938be56f89e551d639403717c2bd0cce96540473a9d8b"
+  },
+  "membership": {
+    "train": 2500,
+    "validation": 200,
+    "pilot_inspected_test": 200,
+    "upgrade_reserve": 200,
+    "refinement_reserve": 200,
+    "poisoned_held_out_users": 800,
+    "refinement_eligible_by_history": {
+      "1": 200,
+      "5": 199,
+      "10": 198
+    }
+  },
+  "fitting": {
+    "train_matrix_sha256": "3220144ff84702aa068fd72d5eaaf6b8a376352af849d484a0f6ebf075ec61ae",
+    "train_only_popularity_matches_active_artifact": true,
+    "held_out_poisoning_preserves_matrix_and_example_hashes": true,
+    "training_example_sha256": {
+      "7": [
+        "a93eb9315b5eec032b2599d312ce9d50873b6de51eb172ab4d632944c768e12e",
+        "fddb7c8b26138d5bf3d7c6cc7379195902c70acb4428316026cad175ae198239",
+        "c47adb0b07fd592d66bb77eee27167da3ef3d77d2efae8b6746c8e2ee550cc95"
+      ],
+      "19": [
+        "2bd0cc84fa1ec098610c981b8e9a2dfdc1be1db1e932a1a3e6a255bbd9abe5ac",
+        "ce36b7be085136e0d523edb503ba5435dfcf63b56753e1fb9f78636a6178c6f5",
+        "c47adb0b07fd592d66bb77eee27167da3ef3d77d2efae8b6746c8e2ee550cc95"
+      ],
+      "42": [
+        "deb4049a0fba42ee68eadc706460a89df4dd51699f1e59d3f452556366fdd968",
+        "0a8e13c970d4780fba2f0fa4646df5d26390a1874dc4e31c5fddd32447e04c28",
+        "c47adb0b07fd592d66bb77eee27167da3ef3d77d2efae8b6746c8e2ee550cc95"
+      ]
+    },
+    "negative_pool_candidates_checked": 9282790,
+    "negative_exclusion_scope": "Full observed histories of training users only."
+  },
+  "selection": {
+    "recorded_validation_argmax_matches_active_selectors": true,
+    "validation_reused_across_generations": true,
+    "reserve_now_inspected_not_available_for_future_tuning": true
+  },
+  "neural_learning_curves": {
+    "7": {
+      "epochs": 5,
+      "selected_epoch": 5,
+      "best_epoch_is_last": true,
+      "first_loss": 1.7145162909656202,
+      "last_loss": 0.784172741547087,
+      "validation_ndcg_change": 0.13024059949327826
+    },
+    "19": {
+      "epochs": 5,
+      "selected_epoch": 5,
+      "best_epoch_is_last": true,
+      "first_loss": 1.6961042873843772,
+      "last_loss": 0.7843022834517416,
+      "validation_ndcg_change": 0.10443635183285391
+    },
+    "42": {
+      "epochs": 5,
+      "selected_epoch": 5,
+      "best_epoch_is_last": true,
+      "first_loss": 1.6771110937461928,
+      "last_loss": 0.7850460576916397,
+      "validation_ndcg_change": 0.11233143965946438
+    }
+  },
+  "temporal_limits": {
+    "global_chronological_split": false,
+    "latest_training_timestamp": 1046437932,
+    "earliest_refinement_timestamp": 956725385,
+    "refinement_target_boundaries_with_timestamp_ties": {
+      "1": 90,
+      "5": 86,
+      "10": 75
+    }
+  },
+  "limitations": [
+    "The audit verifies recorded artifacts, not independent training-execution attestation.",
+    "All catalog metadata is available; no item cold-start or future-catalog claim.",
+    "Training users' future interactions exclude negative candidates: offline user split, not a time-causal next-event training protocol.",
+    "Timestamp ties cross some prefix boundaries; item-index ordering is deterministic, not evidence of within-session chronology.",
+    "Validation reuse and candidate searches can overfit selection. Reserve users are now inspected and cannot be treated as a fresh confirmatory test in future tuning.",
+    "All three neural validation curves peak at the epoch budget. Underfitting or lack of convergence cannot be ruled out; no tuning is justified by reserve performance.",
+    "No repeated split, online test, popularity-bias correction, or overfitting-free claim."
+  ]
+}

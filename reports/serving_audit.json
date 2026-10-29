@@ -1,0 +1,32 @@
+{
+  "created_at": "2026-10-22T00:45:56.436106+00:00",
+  "status": "passed",
+  "bundle": "v3-1b898ab1a5394f47",
+  "frozen_report_sha256": "c11dc070d80eff3b3f65420e49a63fd53cb129140c189539814441827b114095",
+  "data_sha256": "a6898adb50b9ca05aa231689da44c217cb524e7ebd39d264c56e2832f2c54e20",
+  "artifact_hashes": {
+    "rankers.npz": "7f3c82fcc98e19c4e8eb0476fc4dd0546cc003d7d086de2d6253e4ae6cd95a4f",
+    "neural_0.pt": "256f0c60b31f5db523ed04eda6065de67df71f6568b1107538759323bb9c0f2d",
+    "neural_1.pt": "978cd6e7c6b57ac19d9aa8d82cb63499aa18ecf68b0fed339b3d7e3974c27e7a",
+    "neural_2.pt": "7c60154ffb47db6cfd1b72ebf1014003977b9264a17d8ce674a0ffdbf855a9be",
+    "als.npz": "a6d802c19b5405abacf938be56f89e551d639403717c2bd0cce96540473a9d8b"
+  },
+  "histories": {
+    "1": {
+      "users": 200,
+      "candidate_metrics_checked": 12,
+      "mode_rankings_checked": 2000
+    },
+    "5": {
+      "users": 199,
+      "candidate_metrics_checked": 12,
+      "mode_rankings_checked": 1990
+    },
+    "10": {
+      "users": 198,
+      "candidate_metrics_checked": 12,
+      "mode_rankings_checked": 1980
+    }
+  },
+  "scope": "Reproduction of existing frozen results and serving parity; no fitting, selection, or new reserve users."
+}

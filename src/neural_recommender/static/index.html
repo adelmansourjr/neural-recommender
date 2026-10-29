@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>
+      First Few · Neural recommendations
+    </title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header>
+      <strong>
+        FIRST FEW / RECOMMENDATIONS
+      </strong>
+      <span class="small">
+        Measured models. Different tradeoffs.
+      </span>
+      <a href="/docs">
+        API documentation ↗
+      </a>
+    </header>
+    <main>
+      <div class="eyebrow">
+        Small histories. Personal recommendations.
+      </div>
+      <h1>
+        A little taste goes a long way.
+      </h1>
+      <p>
+        Choose a few films you like, then compare recommendations. Accuracy uses a model selected on held-out validation users. Discovery explores a broader catalog with a calibrated hybrid.
+      </p>
+      <div class="grid">
+        <section class="card">
+          <label for="search">
+            Find a film in MovieLens
+          </label>
+          <input id="search" placeholder="Try Toy Story or Star Wars" autocomplete="off">
+          <div id="matches">
+          </div>
+          <h3>
+            Your starting point
+          </h3>
+          <div id="selected">
+            <span class="small">
+              No films selected.
+            </span>
+          </div>
+          <label for="mode" style="margin-top:20px">
+            Ranking approach
+          </label>
+          <select id="mode">
+            <option value="accuracy">
+              Accuracy · validation-selected for this history
+            </option>
+            <option value="discovery">
+              Discovery · broader catalog
+            </option>
+            <option value="hybrid">
+              Hybrid · linear + neural
+            </option>
+            <option value="neural">
+              Neural ensemble
+            </option>
+            <option value="als">
+              Implicit matrix factorization
+            </option>
+            <option value="blend">
+              Validation-selected score blend
+            </option>
+            <option value="ease">
+              Linear autoencoder baseline
+            </option>
+            <option value="item_knn">
+              Item-similarity baseline
+            </option>
+            <option value="popularity">
+              Popularity baseline
+            </option>
+          </select>
+          <label for="relevance-weight" class="reranking-label">
+            Optional genre variety
+          </label>
+          <select id="relevance-weight" aria-describedby="diversity-note">
+            <option value="1">Off · keep the original ranking</option>
+            <option value="0.9">Light variety · 90% relevance weight</option>
+            <option value="0.75">More variety · 75% relevance weight</option>
+            <option value="0.5">Strong variety · 50% relevance weight</option>
+            <option value="0">Genre variety only after the first film</option>
+          </select>
+          <p id="diversity-note" class="small">
+            Reorders the top 100 candidates to reduce repeated genres. More variety can reduce relevance; genre labels do not measure your satisfaction.
+          </p>
+          <button id="recommend" style="margin-top:20px" disabled>
+            Find recommendations
+          </button>
+          <p id="model-note" class="small">
+          </p>
+          <p id="error" class="error" role="alert">
+          </p>
+        </section>
+        <section class="card" aria-live="polite">
+          <div class="eyebrow">
+            Your next watch
+          </div>
+          <div id="recommendations">
+            <p>
+              Recommendations will appear here after you choose a film.
+            </p>
+          </div>
+        </section>
+      </div>
+      <p class="small">
+        Research demonstration using MovieLens 1M. Scores rank films within the selected approach; they are not probabilities. Offline evaluation uses held-out users and full-catalog ranking; unrated films are not confirmed dislikes.
+      </p>
+    </main>
+    <script src="/static/app.js" defer>
+    </script>
+  </body>
+</html>

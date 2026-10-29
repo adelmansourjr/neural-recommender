@@ -1,0 +1,280 @@
+{
+  "config": {
+    "seed": 42,
+    "epochs": 5,
+    "dimension": 32,
+    "batch_size": 512,
+    "learning_rate": 0.003,
+    "negatives": 5,
+    "max_train_users": 2000,
+    "evaluation_users": 200,
+    "history_size": 20,
+    "threads": 2
+  },
+  "training_examples": 29316,
+  "parameter_count": 126976,
+  "protocol": "User-disjoint splits; prefixes of >=4-star ratings; full catalog ranking; unobserved candidates are not known dislikes.",
+  "tie_policy": "Timestamp ties are ordered by item index; no within-session ordering claim.",
+  "selection": "Best validation NDCG@10 at five ratings; test users evaluated after selection.",
+  "data_sha256": "a6898adb50b9ca05aa231689da44c217cb524e7ebd39d264c56e2832f2c54e20",
+  "learning_curve": [
+    {
+      "epoch": 1,
+      "loss": 1.762676724386111,
+      "validation_ndcg_at_10": 0.13188763655207292
+    },
+    {
+      "epoch": 2,
+      "loss": 1.411293512160691,
+      "validation_ndcg_at_10": 0.22634027043215982
+    },
+    {
+      "epoch": 3,
+      "loss": 1.1897333323435042,
+      "validation_ndcg_at_10": 0.26721514774502997
+    },
+    {
+      "epoch": 4,
+      "loss": 1.0364599345809262,
+      "validation_ndcg_at_10": 0.2797129638930043
+    },
+    {
+      "epoch": 5,
+      "loss": 0.9355365650189299,
+      "validation_ndcg_at_10": 0.29272917816617006
+    }
+  ],
+  "runtime": {
+    "numpy": "2.2.6",
+    "torch": "2.8.0"
+  },
+  "limitations": [
+    "User-disjoint offline split, not a global chronological deployment simulation.",
+    "Catalog metadata is available for all items; this is not item cold start.",
+    "Random unobserved negatives may include unlabeled positives.",
+    "Training-only users' full observed histories exclude negative candidates.",
+    "One seed and a limited user sample are a pilot rather than a leaderboard result."
+  ],
+  "test": {
+    "1": {
+      "popularity": {
+        "users": 200,
+        "recall_at_10": {
+          "mean": 0.06738444131250967,
+          "ci95": [
+            0.05932275106035363,
+            0.07571008187344988
+          ]
+        },
+        "ndcg_at_10": {
+          "mean": 0.4236043853179602,
+          "ci95": [
+            0.3870067315736618,
+            0.46754388054814827
+          ]
+        },
+        "catalog_coverage": 0.0028328611898017
+      },
+      "genre": {
+        "users": 200,
+        "recall_at_10": {
+          "mean": 0.006994064896331512,
+          "ci95": [
+            0.004811858741783429,
+            0.009385490233525529
+          ]
+        },
+        "ndcg_at_10": {
+          "mean": 0.07153926238015032,
+          "ci95": [
+            0.05287055276013879,
+            0.092077599955063
+          ]
+        },
+        "catalog_coverage": 0.11743497295905228
+      },
+      "neural": {
+        "users": 200,
+        "recall_at_10": {
+          "mean": 0.04318194247336553,
+          "ci95": [
+            0.036348247663513564,
+            0.05010360817636665
+          ]
+        },
+        "ndcg_at_10": {
+          "mean": 0.2836223509252592,
+          "ci95": [
+            0.24709994815825512,
+            0.3235032476362149
+          ]
+        },
+        "catalog_coverage": 0.05768735513778007
+      },
+      "paired_neural_minus_popularity": {
+        "recall_at_10": {
+          "mean": -0.02420249883914413,
+          "ci95": [
+            -0.03255538827797268,
+            -0.016596084671505053
+          ]
+        },
+        "ndcg_at_10": {
+          "mean": -0.13998203439270088,
+          "ci95": [
+            -0.176987295741948,
+            -0.10788951534216559
+          ]
+        },
+        "interpretation": "Positive favors neural; bootstrap resamples paired users."
+      }
+    },
+    "5": {
+      "popularity": {
+        "users": 200,
+        "recall_at_10": {
+          "mean": 0.0606010640023584,
+          "ci95": [
+            0.051731349269777814,
+            0.07195133568082411
+          ]
+        },
+        "ndcg_at_10": {
+          "mean": 0.37606334602058283,
+          "ci95": [
+            0.3367906977360469,
+            0.42215387107310015
+          ]
+        },
+        "catalog_coverage": 0.0036054596961112542
+      },
+      "genre": {
+        "users": 200,
+        "recall_at_10": {
+          "mean": 0.009662112512961157,
+          "ci95": [
+            0.007125842602843683,
+            0.012418277152645348
+          ]
+        },
+        "ndcg_at_10": {
+          "mean": 0.08123830963513423,
+          "ci95": [
+            0.062048757018567095,
+            0.10130163441070672
+          ]
+        },
+        "catalog_coverage": 0.11820757146536183
+      },
+      "neural": {
+        "users": 200,
+        "recall_at_10": {
+          "mean": 0.05491652125122982,
+          "ci95": [
+            0.046250718769470824,
+            0.06375775326900741
+          ]
+        },
+        "ndcg_at_10": {
+          "mean": 0.3404237473690515,
+          "ci95": [
+            0.30171402274071507,
+            0.38535330917961175
+          ]
+        },
+        "catalog_coverage": 0.024208086531032708
+      },
+      "paired_neural_minus_popularity": {
+        "recall_at_10": {
+          "mean": -0.005684542751128593,
+          "ci95": [
+            -0.01626608718596711,
+            0.003519718078691891
+          ]
+        },
+        "ndcg_at_10": {
+          "mean": -0.03563959865153127,
+          "ci95": [
+            -0.06618484978019185,
+            -0.0068929514404930635
+          ]
+        },
+        "interpretation": "Positive favors neural; bootstrap resamples paired users."
+      }
+    },
+    "10": {
+      "popularity": {
+        "users": 193,
+        "recall_at_10": {
+          "mean": 0.05166983808456558,
+          "ci95": [
+            0.04464587276710586,
+            0.059709147402495
+          ]
+        },
+        "ndcg_at_10": {
+          "mean": 0.3416498185220777,
+          "ci95": [
+            0.3020856590642373,
+            0.38405180389707444
+          ]
+        },
+        "catalog_coverage": 0.004378058202420809
+      },
+      "genre": {
+        "users": 193,
+        "recall_at_10": {
+          "mean": 0.014164025897835568,
+          "ci95": [
+            0.00887130538104133,
+            0.019433753262280085
+          ]
+        },
+        "ndcg_at_10": {
+          "mean": 0.07983660573000279,
+          "ci95": [
+            0.06053887915987297,
+            0.09852953597960859
+          ]
+        },
+        "catalog_coverage": 0.11022405356682977
+      },
+      "neural": {
+        "users": 193,
+        "recall_at_10": {
+          "mean": 0.055448681436145425,
+          "ci95": [
+            0.04538729652222079,
+            0.06504433483992146
+          ]
+        },
+        "ndcg_at_10": {
+          "mean": 0.3265564493894462,
+          "ci95": [
+            0.289017338684742,
+            0.3668521427076498
+          ]
+        },
+        "catalog_coverage": 0.02240535668297708
+      },
+      "paired_neural_minus_popularity": {
+        "recall_at_10": {
+          "mean": 0.0037788433515798486,
+          "ci95": [
+            -0.005467371399412799,
+            0.012287328705411988
+          ]
+        },
+        "ndcg_at_10": {
+          "mean": -0.015093369132631474,
+          "ci95": [
+            -0.04655332954418899,
+            0.010730084938737026
+          ]
+        },
+        "interpretation": "Positive favors neural; bootstrap resamples paired users."
+      }
+    }
+  },
+  "elapsed_seconds": 4.8
+}

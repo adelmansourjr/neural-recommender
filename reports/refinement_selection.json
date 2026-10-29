@@ -1,0 +1,104 @@
+{
+  "created_at": "2026-10-22T00:19:15.370988+00:00",
+  "als_config": {
+    "factors": 32,
+    "regularization": 10,
+    "alpha": 10,
+    "iterations": 5,
+    "seed": 27
+  },
+  "history_selector": {
+    "1": {
+      "name": "popularity",
+      "weights": {
+        "popularity": 1.0
+      }
+    },
+    "5": {
+      "name": "knn_als",
+      "weights": {
+        "item_knn": 0.75,
+        "als": 0.25
+      }
+    },
+    "10": {
+      "name": "balanced",
+      "weights": {
+        "item_knn": 0.4,
+        "ease": 0.3,
+        "neural_ensemble": 0.2,
+        "als": 0.1
+      }
+    }
+  },
+  "history_blends": {
+    "1": {
+      "name": "knn_neural",
+      "weights": {
+        "item_knn": 0.75,
+        "neural_ensemble": 0.25
+      }
+    },
+    "5": {
+      "name": "knn_als",
+      "weights": {
+        "item_knn": 0.75,
+        "als": 0.25
+      }
+    },
+    "10": {
+      "name": "balanced",
+      "weights": {
+        "item_knn": 0.4,
+        "ease": 0.3,
+        "neural_ensemble": 0.2,
+        "als": 0.1
+      }
+    }
+  },
+  "validation_search": {
+    "1": {
+      "popularity": 0.351948108486033,
+      "item_knn": 0.2775834999779399,
+      "ease": 0.22406510398815055,
+      "neural_ensemble": 0.31921630722107275,
+      "als": 0.22370630050483206,
+      "previous_hybrid": 0.22713678158596365,
+      "knn_ease_equal": 0.2422833794731888,
+      "knn_neural": 0.28897070028403554,
+      "knn_als": 0.2651188900115886,
+      "ease_als": 0.21991772367106122,
+      "neural_als": 0.281348780563662,
+      "balanced": 0.24726803300778244
+    },
+    "5": {
+      "popularity": 0.31004684401924465,
+      "item_knn": 0.3654681519042382,
+      "ease": 0.34260430932594665,
+      "neural_ensemble": 0.337516018679876,
+      "als": 0.33212148716456114,
+      "previous_hybrid": 0.34560304418964605,
+      "knn_ease_equal": 0.3571242748916658,
+      "knn_neural": 0.3684043434009937,
+      "knn_als": 0.37085874286365683,
+      "ease_als": 0.34125151621332045,
+      "neural_als": 0.3507390813607463,
+      "balanced": 0.36070813725513745
+    },
+    "10": {
+      "popularity": 0.27638958139674447,
+      "item_knn": 0.34118298464865815,
+      "ease": 0.3400870689902895,
+      "neural_ensemble": 0.30461304835741265,
+      "als": 0.32740965557184026,
+      "previous_hybrid": 0.34051290103724635,
+      "knn_ease_equal": 0.3504238807994752,
+      "knn_neural": 0.3392838710829747,
+      "knn_als": 0.3476798409081097,
+      "ease_als": 0.345137316681769,
+      "neural_als": 0.3283086709371306,
+      "balanced": 0.35234278563000243
+    }
+  },
+  "protocol_sha256": "52c8ee22bbbfe595b9f374e99700020fcac57adcfd80eb8c9cb5c20d4dbb6f38"
+}
